@@ -1,6 +1,6 @@
-// dependency on client.js
-const connect = require('./client');
-const setupInput = require('./input');
+  // dependency on client.js
+const  connect  = require('./client');
+const  setupInput  = require('./input');
   // Verifies our stript is running
 console.log('Connecting ...');
 
@@ -8,4 +8,4 @@ console.log('Connecting ...');
   // Goes and tries to connect
 connect();
   // initiallizes user inputs
-setupInput();
+setupInput(connect);
