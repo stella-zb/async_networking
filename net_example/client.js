@@ -10,3 +10,7 @@ conn.setEncoding('utf8');
 conn.on('data', (data) => {
   console.log('Server says: ', data);
 });
+
+conn.on('connect', () => {
+  conn.write(`I'm in.`);
+});
