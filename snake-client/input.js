@@ -10,6 +10,10 @@ const handleUserInput = (data) => {
     console.log("Thanks for using me, ciao!");
     process.exit();
   }
+  if (data === `w`) { console.log("Move: up"); }
+  if (data === `a`) { console.log("Move: left"); }
+  if (data === `s`) { console.log("Move: down"); }
+  if (data === `d`) { console.log("Move: right"); }
 };
 
 const setupInput = (conn) => {
@@ -23,20 +27,3 @@ const setupInput = (conn) => {
 }
 
 module.exports = setupInput;
-
-
-/*
-
-Update the setupInput function within input module to accept a conn parameter and set it as the value for the connection variable.
-
-let connection;
-
-const setupInput = function(conn) {
-  connection = conn;
-}
-Update play.js to send the connection object returned from connect() into our setupInput() function.
-
-Our input module can now use the connection variable to send movement commands/messages to the server.
-
-Run the code again to ensure that it is valid and runnable, as before.
-*/
