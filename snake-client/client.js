@@ -22,14 +22,18 @@ const connect = () => {
       conn.write("Name: S&T");
     })
 
-    // movement function
+  
     // conn.on('connect', () => {
     //   console.log(`Move Up`)
-    //   conn.write("Move: up");
+    //   setInterval(() => {
+    //     conn.write("Move: up");
+    //   }, 50);
     // })
     // conn.on('connect', () => {
     //   console.log(`Move Left`)
-    //   conn.write("Move: left");
+    //   setTimeout(() => {
+    //     conn.write("Move: left"); 
+    //   }, 800);
     // })
     // conn.on('connect', () => {
     //   console.log(`Move Up`)
