@@ -12,6 +12,6 @@ Include exercises:
 |-|-|-|
 | @togmund | 192.168.88.215 |3001|
 | @stella-zb | 192.168.88.13 |3001|
-| snake-client| 192.168.99.149 |50541|
+| snake-client| 192.168.88.149 |50541|
 
 ### Snake Client Notes
