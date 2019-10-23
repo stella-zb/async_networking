@@ -9,4 +9,9 @@ server.listen(3001, () => {
 server.on('connection', (client) => {
   console.log('New client connected!');
   client.write('Hello there!');
+  client.setEncoding('utf8'); // interpret data as text
+  client.on('data', (data) => {
+    console.log('Message from client: ', data)
+  });
 });
+
