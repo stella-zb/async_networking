@@ -9,10 +9,15 @@ const handleUserInput = (data) => {
     console.log("Thanks for using me, ciao!");
     process.exit();
   }
+  // direction command
   if (data === `w`) { connection.write("Move: up"); }
   if (data === `a`) { connection.write("Move: left"); }
   if (data === `s`) { connection.write("Move: down"); }
   if (data === `d`) { connection.write("Move: right"); }
+
+  // smack talk
+  if (data === `q`) { connection.write("Say: Ooops"); }
+  if (data === `e`) { connection.write("Say: REKT"); }
 };
 
 const setupInput = (conn) => {
