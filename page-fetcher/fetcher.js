@@ -15,10 +15,18 @@ request(cliArgs[0], (error, response, body) => {
   console.log('body:', body);
   console.log('error:', error);
   console.log('statusCode:', response && response.statusCode);
-  fs.writeFile('index.html', body, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
+  if (response.statusCode[0] !== 2) {
+    console.log(`expected 200 got ${response.statusCode} terminate application`);
+    return;
+  }
+  if (body !== undefined) {
+    fs.writeFile('index.html', body, function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
+  } else {
+    console.log('No body No file, sorry try again');
+  } 
 });
 
 
