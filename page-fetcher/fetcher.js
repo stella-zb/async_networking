@@ -17,3 +17,8 @@ request(cliArgs[0], (error, response, body) => {
   console.log('statusCode:', response && response.statusCode);
 });
 
+
+fs.writeFile('path', data, (err) => {
+  if (err) throw err;
+  console.log(`Downloaded and saved`);
+});
