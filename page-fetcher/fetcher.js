@@ -7,7 +7,7 @@ Extra considerations:
   X | Do not use the pipe function
   ? | Do not use synchronous functions (see warning below)
 */
-
+const fs = require('fs');
 const request = require('request');
 const cliArgs = process.argv.slice(2);
 
@@ -17,8 +17,7 @@ request(cliArgs[0], (error, response, body) => {
   console.log('statusCode:', response && response.statusCode);
 });
 
-
-fs.writeFile('path', data, (err) => {
-  if (err) throw err;
-  console.log(`Downloaded and saved`);
-});
+// fs.writeFile('receipt.txt', order, function (err) {
+//   if (err) throw err;
+//   console.log('Saved!');
+// });
