@@ -1,10 +1,14 @@
 const titleCase  = function(text) {
-  let textAsArray = text.split(" ");
+
+  const textAsArray = text.split(" ");
+
+  let output = [];
+
   textAsArray.forEach((element) => {
-    console.log(element[0]);
-    element[0].toUpperCase();
+    output.push(`${element[0].toUpperCase()}${element.slice(1).toLowerCase()}`);
   })
-  return textAsArray;
+
+  return output.join(' ');
 };
 
 console.log(titleCase("this is an example"));

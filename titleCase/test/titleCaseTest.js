@@ -2,9 +2,9 @@ const assert = require('chai').assert;
 const titleCase = require('../titleCase');
 
 describe('#titleCase', () => {
-  it ('this is an sample', () => {
+  it ('this is an example', () => {
     const expected = "This Is An Example";
-    const actual = titleCase('this is an sample');
+    const actual = titleCase('this is an example');
     assert.equal(expected, actual);
   });
 
