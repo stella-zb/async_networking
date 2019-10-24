@@ -2,10 +2,10 @@ const net = require('net');
 /**
  * Establishes connection with the game server
  */
-const connect = () => {
+const connect = (constants) => {
   const conn = net.createConnection({
-    host: '192.168.88.149',
-    port: 50541
+    host: constants.IP,
+    port: constants.PORT
   });
 
   // interpret incoming data as text
@@ -19,39 +19,9 @@ const connect = () => {
     // Verify we connected
     conn.on('connect', () => {
       console.log(`I'm In.`)
-      conn.write("Name: S&T");
+      conn.write(`Name: ${constants.NAME}`);
     })
 
-  
-    // conn.on('connect', () => {
-    //   console.log(`Move Up`)
-    //   setInterval(() => {
-    //     conn.write("Move: up");
-    //   }, 50);
-    // })
-    // conn.on('connect', () => {
-    //   console.log(`Move Left`)
-    //   setTimeout(() => {
-    //     conn.write("Move: left"); 
-    //   }, 800);
-    // })
-    // conn.on('connect', () => {
-    //   console.log(`Move Up`)
-    //   conn.write("Move: up");
-    // })
-    // conn.on('connect', () => {
-    //   console.log(`Move Left`)
-    //   conn.write("Move: left");
-    // })
-    // conn.on('connect', () => {
-    //   console.log(`Move Down`)
-    //   conn.write("Move: down");
-    // })
-    // conn.on('connect', () => {
-    //   console.log(`Move Right`)
-    //   conn.write("Move: right");
-    // })
-  // Not sure what this does!
   return conn;
 }
 
