@@ -12,21 +12,21 @@ const request = require('request');
 const cliArgs = process.argv.slice(2);
 
 request(cliArgs[0], (error, response, body) => {
-  if (error){
-    throw error
+  if (error) {
+    throw error;
   }
   if (response.statusCode !== 200) {
     console.log(`expected 200 got ${response.statusCode} terminate application`);
     return;
   }
   if (body !== undefined) {
-    fs.writeFile(cliArgs[1], body, function (err) {
+    fs.writeFile(cliArgs[1], body, function(err) {
       if (err) throw err;
       console.log('Saved!');
     });
   } else {
     console.log('No body No file, sorry try again');
-  } 
+  }
 });
 
 
