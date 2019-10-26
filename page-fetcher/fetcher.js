@@ -12,15 +12,15 @@ const request = require('request');
 const cliArgs = process.argv.slice(2);
 
 request(cliArgs[0], (error, response, body) => {
-  console.log('body:', body);
-  console.log('error:', error);
-  console.log('statusCode:', response && response.statusCode);
-  if (response.statusCode[0] !== 2) {
+  if (error){
+    throw error
+  }
+  if (response.statusCode !== 200) {
     console.log(`expected 200 got ${response.statusCode} terminate application`);
     return;
   }
   if (body !== undefined) {
-    fs.writeFile('index.html', body, function (err) {
+    fs.writeFile(cliArgs[1], body, function (err) {
       if (err) throw err;
       console.log('Saved!');
     });
